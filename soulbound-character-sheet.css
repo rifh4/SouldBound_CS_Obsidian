@@ -537,3 +537,16 @@ The two page backgrounds are embedded as WebP data URLs.
   height: 100%;
   line-height: 0 !important;
 }
+
+/* Vertical divider between the two Talents columns */
+.callout[data-callout="soulbound-page-1"] > .callout-content::before {
+  content: "";
+  position: absolute;
+  left: 62.91%;
+  top: 43.73%;
+  height: 18.07%;
+  width: clamp(1px, 0.12cqw, 2px);
+  background: rgba(105, 88, 22, 0.65);
+  pointer-events: none;
+  z-index: 1;
+}
