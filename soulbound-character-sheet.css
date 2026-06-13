@@ -550,3 +550,1186 @@ The two page backgrounds are embedded as WebP data URLs.
   pointer-events: none;
   z-index: 1;
 }
+
+/* Direct-on-sheet Meta Bind controls */
+.callout[data-callout="soulbound-page-1"] .mb-input-type-text.sb-sheet-input,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-number.sb-sheet-input,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-textArea.sb-sheet-input,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-textarea.sb-sheet-input,
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-input,
+.callout[data-callout="soulbound-page-2"] .mb-input-type-number.sb-sheet-input,
+.callout[data-callout="soulbound-page-2"] .mb-input-type-textArea.sb-sheet-input,
+.callout[data-callout="soulbound-page-2"] .mb-input-type-textarea.sb-sheet-input {
+  position: absolute !important;
+  z-index: 4;
+  display: block !important;
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  line-height: 1 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input > *,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input > * {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input :is(input, textarea) {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 0.22cqw !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #111 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(7px, 1.36cqw, 15px) !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input:hover :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input:hover :is(input, textarea) {
+  background: rgba(255, 239, 150, 0.18) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input:focus-within :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input:focus-within :is(input, textarea) {
+  background: rgba(255, 239, 150, 0.34) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.55) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input.sb-sheet-small :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input.sb-sheet-small :is(input, textarea) {
+  font-size: clamp(6px, 1.02cqw, 11px) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input.sb-sheet-large input,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input.sb-sheet-large input {
+  padding: 0 !important;
+  font-size: clamp(10px, 2.35cqw, 25px) !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input.sb-sheet-multiline textarea,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input.sb-sheet-multiline textarea {
+  padding: 0.25cqw 0.35cqw !important;
+  resize: none !important;
+  overflow: auto !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  font-size: clamp(6px, 1.12cqw, 12px) !important;
+  line-height: 1.22 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input input[type="number"]::-webkit-inner-spin-button,
+.callout[data-callout="soulbound-page-1"] .sb-sheet-input input[type="number"]::-webkit-outer-spin-button,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input input[type="number"]::-webkit-inner-spin-button,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-input input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Invisible dropdowns over each three-box Training or Focus group. */
+.callout[data-callout="soulbound-page-1"] .mb-input-type-inlineSelect.sb-sheet-skill-control {
+  position: absolute !important;
+  z-index: 6;
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 2px;
+  background: transparent !important;
+  color: transparent !important;
+  cursor: pointer;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-inlineSelect.sb-sheet-skill-control > * {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-inlineSelect.sb-sheet-skill-control :is(select, button, input) {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-inlineSelect.sb-sheet-skill-control:hover,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-inlineSelect.sb-sheet-skill-control:focus-within {
+  background: rgba(255, 221, 95, 0.28) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.45);
+}
+
+/* Invisible click targets over Wound and Mortally Wounded markers. */
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle.sb-sheet-toggle-control {
+  position: absolute !important;
+  z-index: 7;
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50%;
+  background: transparent !important;
+  cursor: pointer;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle.sb-sheet-toggle-control * {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle.sb-sheet-toggle-control:hover,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle.sb-sheet-toggle-control:focus-within {
+  background: rgba(255, 221, 95, 0.28) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.45);
+}
+
+/* The portrait remains visible; its path editor appears at the lower edge. */
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-portrait-path {
+  position: absolute !important;
+  z-index: 7;
+  display: flex !important;
+  align-items: flex-end;
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0.25cqw !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-portrait-path > * {
+  width: 100% !important;
+}
+
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-portrait-path input {
+  width: 100% !important;
+  height: 18% !important;
+  min-height: 1.4rem;
+  margin: 0 !important;
+  padding: 0.15rem 0.25rem !important;
+  border: 1px solid rgba(80, 65, 20, 0.55) !important;
+  border-radius: 3px !important;
+  opacity: 0 !important;
+  background: rgba(255, 252, 230, 0.94) !important;
+  color: #111 !important;
+  font-size: clamp(6px, 0.92cqw, 10px) !important;
+  transition: opacity 120ms ease;
+}
+
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-portrait-path:hover input,
+.callout[data-callout="soulbound-page-2"] .mb-input-type-text.sb-sheet-portrait-path:focus-within input {
+  opacity: 1 !important;
+}
+
+@media print {
+  .callout[data-callout="soulbound-page-1"] > .callout-content > p,
+  .callout[data-callout="soulbound-page-2"] > .callout-content > p {
+    display: block !important;
+  }
+
+  .callout[data-callout="soulbound-page-1"] .sb-sheet-input :is(input, textarea),
+  .callout[data-callout="soulbound-page-2"] .sb-sheet-input :is(input, textarea) {
+    background: transparent !important;
+    outline: 0 !important;
+  }
+
+  .sb-sheet-skill-control,
+  .sb-sheet-toggle-control,
+  .sb-sheet-portrait-path {
+    display: none !important;
+  }
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-skill-arcana-focus { left: 46.480122%; top: 22.734692%; width: 4.987269%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-arcana-training { left: 41.066733%; top: 22.734692%; width: 5.026805%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-athletics-focus { left: 46.480122%; top: 24.802085%; width: 4.987269%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-athletics-training { left: 41.066733%; top: 24.802085%; width: 5.026805%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-awareness-focus { left: 46.480122%; top: 26.869478%; width: 4.987269%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-awareness-training { left: 41.066733%; top: 26.869478%; width: 5.026805%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-ballistic-skill-focus { left: 46.480122%; top: 28.936744%; width: 4.987269%; height: 1.681885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-ballistic-skill-training { left: 41.066733%; top: 28.936744%; width: 5.026805%; height: 1.681885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-beast-handling-focus { left: 46.480122%; top: 31.004137%; width: 4.987269%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-beast-handling-training { left: 41.066733%; top: 31.004137%; width: 5.026805%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-channelling-focus { left: 46.480122%; top: 33.071529%; width: 4.987269%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-channelling-training { left: 41.066733%; top: 33.071529%; width: 5.026805%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-crafting-focus { left: 46.480122%; top: 35.138922%; width: 4.987269%; height: 1.681753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-crafting-training { left: 41.066733%; top: 35.138922%; width: 5.026805%; height: 1.681753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-determination-focus { left: 46.480122%; top: 37.206188%; width: 4.987269%; height: 1.681881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-determination-training { left: 41.066733%; top: 37.206188%; width: 5.026805%; height: 1.681881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-devotion-focus { left: 68.006204%; top: 22.734692%; width: 4.999740%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-devotion-training { left: 62.612502%; top: 22.734692%; width: 5.026803%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-dexterity-focus { left: 68.006204%; top: 24.802085%; width: 4.999740%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-dexterity-training { left: 62.612502%; top: 24.802085%; width: 5.026803%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-entertain-focus { left: 68.006204%; top: 26.869478%; width: 4.999740%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-entertain-training { left: 62.612502%; top: 26.869478%; width: 5.026803%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-fortitude-focus { left: 68.006204%; top: 28.936744%; width: 4.999740%; height: 1.681885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-fortitude-training { left: 62.612502%; top: 28.936744%; width: 5.026803%; height: 1.681885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-guile-focus { left: 68.006204%; top: 31.004137%; width: 4.999740%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-guile-training { left: 62.612502%; top: 31.004137%; width: 5.026803%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intimidation-focus { left: 68.006204%; top: 33.071529%; width: 4.999740%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intimidation-training { left: 62.612502%; top: 33.071529%; width: 5.026803%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intuition-focus { left: 68.006204%; top: 35.138922%; width: 4.999740%; height: 1.681753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intuition-training { left: 62.612502%; top: 35.138922%; width: 5.026803%; height: 1.681753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-lore-focus { left: 68.006204%; top: 37.206188%; width: 4.999740%; height: 1.681881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-lore-training { left: 62.612502%; top: 37.206188%; width: 5.026803%; height: 1.681881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-medicine-focus { left: 89.469459%; top: 22.734692%; width: 4.986288%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-medicine-training { left: 84.057715%; top: 22.734692%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-might-focus { left: 89.469459%; top: 24.802085%; width: 4.986288%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-might-training { left: 84.057715%; top: 24.801304%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-nature-focus { left: 89.469459%; top: 26.869478%; width: 4.986288%; height: 1.681757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-nature-training { left: 84.057715%; top: 26.867788%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-reflexes-focus { left: 89.469459%; top: 28.936744%; width: 4.986288%; height: 1.681885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-reflexes-training { left: 84.057715%; top: 28.934391%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-stealth-focus { left: 89.469459%; top: 31.004137%; width: 4.986288%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-stealth-training { left: 84.057715%; top: 31.000875%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-survival-focus { left: 89.469459%; top: 33.071529%; width: 4.986288%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-survival-training { left: 84.057715%; top: 33.067482%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-theology-focus { left: 89.469459%; top: 35.138922%; width: 4.986288%; height: 1.681753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-theology-training { left: 84.057715%; top: 35.133958%; width: 5.026808%; height: 1.681749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-weapon-skill-focus { left: 89.469459%; top: 37.206188%; width: 4.986288%; height: 1.681881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-weapon-skill-training { left: 84.057715%; top: 37.200569%; width: 5.026808%; height: 1.681749%; }
+
+/* -------------------------------------------------------------------------
+   Direct Edit v6 parser/layout fix
+   ------------------------------------------------------------------------- */
+
+/* Each Meta Bind field now lives in its own callout paragraph. The paragraph
+   itself must not block fields positioned in earlier paragraphs. */
+.callout[data-callout="soulbound-page-1"] > .callout-content > p,
+.callout[data-callout="soulbound-page-2"] > .callout-content > p {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ordinary text, number, and textarea inputs. */
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+),
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) {
+  position: absolute !important;
+  z-index: 6 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  line-height: 1 !important;
+  pointer-events: auto !important;
+}
+
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) > *,
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) > * {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) :is(input, textarea) {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 0.22cqw !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #111 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(7px, 1.36cqw, 15px) !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+):hover :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+):hover :is(input, textarea) {
+  background: rgba(255, 239, 150, 0.18) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+):focus-within :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+):focus-within :is(input, textarea) {
+  background: rgba(255, 239, 150, 0.34) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.55) !important;
+}
+
+/* Skill controls use only one custom class each. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] {
+  position: absolute !important;
+  z-index: 8 !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  color: transparent !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] > * {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] :is(select, button, input) {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"]:hover,
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"]:focus-within {
+  background: rgba(255, 221, 95, 0.28) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.45) !important;
+}
+
+/* The only toggle inputs on page 1 are the Wound markers. */
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle {
+  position: absolute !important;
+  z-index: 9 !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle * {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle:hover,
+.callout[data-callout="soulbound-page-1"] .mb-input-type-toggle:focus-within {
+  background: rgba(255, 221, 95, 0.28) !important;
+  outline: 1px solid rgba(117, 90, 10, 0.45) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-162 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-164 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-172 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-177 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-182 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-187 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-195 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-200 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-202 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-204 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-206 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-208 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-209 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-210 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-211 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-212 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-213 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-214 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-215 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-216 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-217 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-218 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-220 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-221 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-222 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-223 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-224 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-225 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-226 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-227 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-228 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-229 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-231 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-232 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-233 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-234 :is(input, textarea),
+.callout[data-callout="soulbound-page-1"] .sb-v-1-235 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-003 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-006 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-007 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-008 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-009 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-010 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-011 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-012 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-013 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-014 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-018 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-019 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-020 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-021 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-022 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-023 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-024 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-025 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-026 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-027 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-028 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-029 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-030 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-031 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-032 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-033 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-034 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-035 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-036 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-037 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-038 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-039 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-040 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-041 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-042 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-043 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-044 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-045 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-046 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-047 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-048 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-049 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-050 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-051 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-052 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-053 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-054 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-055 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-056 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-057 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-058 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-059 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-060 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-061 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-062 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-063 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-064 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-065 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-066 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-067 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-068 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-069 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-070 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-071 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-072 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-073 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-074 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-075 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-076 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-077 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-078 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-079 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-080 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-081 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-082 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-083 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-084 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-085 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-086 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-087 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-088 :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-v-2-089 :is(input, textarea) {
+  font-size: clamp(6px, 1.02cqw, 11px) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-010 input,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-047 input,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-102 input,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-166 input,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-189 input,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-191 input,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-015 input,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-016 input,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-017 input {
+  padding: 0 !important;
+  font-size: clamp(10px, 2.35cqw, 25px) !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-158 textarea,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-159 textarea,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-160 textarea,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-161 textarea,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-001 textarea,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-002 textarea,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-004 textarea,
+.callout[data-callout="soulbound-page-2"] .sb-v-2-005 textarea {
+  padding: 0.25cqw 0.35cqw !important;
+  resize: none !important;
+  overflow: auto !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  font-size: clamp(6px, 1.12cqw, 12px) !important;
+  line-height: 1.22 !important;
+}
+
+/* Direct Edit v7: one reactive display per Training/Focus group.
+   This reduces the number of Meta Bind fields on page 1 and prevents the
+   final field from appearing as raw INPUT syntax. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"] {
+  position: absolute !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(6px, 1.02cqw, 11px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: pre !important;
+  pointer-events: none !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-arcana-training { left: 41.266733%; top: 22.934692%; width: 4.626805%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-arcana-focus { left: 46.680122%; top: 22.934692%; width: 4.587269%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-devotion-training { left: 62.812502%; top: 22.934692%; width: 4.626803%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-devotion-focus { left: 68.206204%; top: 22.934692%; width: 4.599740%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-medicine-training { left: 84.257715%; top: 22.934692%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-medicine-focus { left: 89.669459%; top: 22.934692%; width: 4.586288%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-might-training { left: 84.257715%; top: 25.001304%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-athletics-training { left: 41.266733%; top: 25.002085%; width: 4.626805%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-athletics-focus { left: 46.680122%; top: 25.002085%; width: 4.587269%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-dexterity-training { left: 62.812502%; top: 25.002085%; width: 4.626803%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-dexterity-focus { left: 68.206204%; top: 25.002085%; width: 4.599740%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-might-focus { left: 89.669459%; top: 25.002085%; width: 4.586288%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-nature-training { left: 84.257715%; top: 27.067788%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-awareness-training { left: 41.266733%; top: 27.069478%; width: 4.626805%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-awareness-focus { left: 46.680122%; top: 27.069478%; width: 4.587269%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-entertain-training { left: 62.812502%; top: 27.069478%; width: 4.626803%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-entertain-focus { left: 68.206204%; top: 27.069478%; width: 4.599740%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-nature-focus { left: 89.669459%; top: 27.069478%; width: 4.586288%; height: 1.281757%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-reflexes-training { left: 84.257715%; top: 29.134391%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-ballistic-skill-training { left: 41.266733%; top: 29.136744%; width: 4.626805%; height: 1.281885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-ballistic-skill-focus { left: 46.680122%; top: 29.136744%; width: 4.587269%; height: 1.281885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-fortitude-training { left: 62.812502%; top: 29.136744%; width: 4.626803%; height: 1.281885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-fortitude-focus { left: 68.206204%; top: 29.136744%; width: 4.599740%; height: 1.281885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-reflexes-focus { left: 89.669459%; top: 29.136744%; width: 4.586288%; height: 1.281885%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-stealth-training { left: 84.257715%; top: 31.200875%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-beast-handling-training { left: 41.266733%; top: 31.204137%; width: 4.626805%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-beast-handling-focus { left: 46.680122%; top: 31.204137%; width: 4.587269%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-guile-training { left: 62.812502%; top: 31.204137%; width: 4.626803%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-guile-focus { left: 68.206204%; top: 31.204137%; width: 4.599740%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-stealth-focus { left: 89.669459%; top: 31.204137%; width: 4.586288%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-survival-training { left: 84.257715%; top: 33.267482%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-channelling-training { left: 41.266733%; top: 33.271529%; width: 4.626805%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-channelling-focus { left: 46.680122%; top: 33.271529%; width: 4.587269%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-intimidation-training { left: 62.812502%; top: 33.271529%; width: 4.626803%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-intimidation-focus { left: 68.206204%; top: 33.271529%; width: 4.599740%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-survival-focus { left: 89.669459%; top: 33.271529%; width: 4.586288%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-theology-training { left: 84.257715%; top: 35.333958%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-crafting-training { left: 41.266733%; top: 35.338922%; width: 4.626805%; height: 1.281753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-crafting-focus { left: 46.680122%; top: 35.338922%; width: 4.587269%; height: 1.281753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-intuition-training { left: 62.812502%; top: 35.338922%; width: 4.626803%; height: 1.281753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-intuition-focus { left: 68.206204%; top: 35.338922%; width: 4.599740%; height: 1.281753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-theology-focus { left: 89.669459%; top: 35.338922%; width: 4.586288%; height: 1.281753%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-weapon-skill-training { left: 84.257715%; top: 37.400569%; width: 4.626808%; height: 1.281749%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-determination-training { left: 41.266733%; top: 37.406188%; width: 4.626805%; height: 1.281881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-determination-focus { left: 46.680122%; top: 37.406188%; width: 4.587269%; height: 1.281881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-lore-training { left: 62.812502%; top: 37.406188%; width: 4.626803%; height: 1.281881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-lore-focus { left: 68.206204%; top: 37.406188%; width: 4.599740%; height: 1.281881%; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-display-weapon-skill-focus { left: 89.669459%; top: 37.406188%; width: 4.586288%; height: 1.281881%; }
+
+/* Direct Edit v9: Meta Bind leaves the final inline field in a callout
+   unprocessed in some Obsidian setups. Each page therefore ends with a
+   harmless sentinel field, and this final paragraph is hidden. */
+.callout[data-callout="soulbound-page-1"] > .callout-content > p:last-child,
+.callout[data-callout="soulbound-page-2"] > .callout-content > p:last-child {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v10 visual cleanup
+   ------------------------------------------------------------------------- */
+
+/* Hide Meta Bind's default "Text" placeholder inside empty graphical fields. */
+.callout[data-callout="soulbound-page-1"] :is(input, textarea)::placeholder,
+.callout[data-callout="soulbound-page-2"] :is(input, textarea)::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Centre Natural Awareness inside the printed circle instead of allowing the
+   value to begin beside the label. */
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-157 {
+  left: 94.15% !important;
+  top: 38.78% !important;
+  width: 3.85% !important;
+  height: 2.80% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  overflow: visible !important;
+  text-align: center !important;
+  font-size: clamp(7px, 1.28cqw, 14px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-157 * {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  line-height: 1 !important;
+}
+
+/* Keep the invisible Training/Focus controls invisible while selected.
+   The previous focus outline covered the printed skill boxes in yellow. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"]:hover,
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"]:focus,
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"]:focus-within {
+  background: transparent !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v11 alignment fixes
+   ------------------------------------------------------------------------- */
+
+/* Natural Awareness is calculated, so it remains a read-only VIEW.
+   Restore the original PDF widget rectangle and centre the value in it. */
+.callout[data-callout="soulbound-page-1"] .sb-v-1-157,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-157,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-157 {
+  position: absolute !important;
+  left: 92.709973% !important;
+  top: 38.775739% !important;
+  width: 3.367787% !important;
+  height: 2.758963% !important;
+  z-index: 6 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+
+  color: #111 !important;
+  text-align: center !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(7px, 1.18cqw, 13px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-157 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-157 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-157 * {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* The skill dropdowns were deliberately enlarged in an earlier version.
+   They now use exactly the same rectangles as the visible marker groups. */
+.callout[data-callout="soulbound-page-1"] .sb-skill-arcana-focus { left: 46.680122% !important; top: 22.934692% !important; width: 4.587269% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-arcana-training { left: 41.266733% !important; top: 22.934692% !important; width: 4.626805% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-athletics-focus { left: 46.680122% !important; top: 25.002085% !important; width: 4.587269% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-athletics-training { left: 41.266733% !important; top: 25.002085% !important; width: 4.626805% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-awareness-focus { left: 46.680122% !important; top: 27.069478% !important; width: 4.587269% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-awareness-training { left: 41.266733% !important; top: 27.069478% !important; width: 4.626805% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-ballistic-skill-focus { left: 46.680122% !important; top: 29.136744% !important; width: 4.587269% !important; height: 1.281885% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-ballistic-skill-training { left: 41.266733% !important; top: 29.136744% !important; width: 4.626805% !important; height: 1.281885% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-beast-handling-focus { left: 46.680122% !important; top: 31.204137% !important; width: 4.587269% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-beast-handling-training { left: 41.266733% !important; top: 31.204137% !important; width: 4.626805% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-channelling-focus { left: 46.680122% !important; top: 33.271529% !important; width: 4.587269% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-channelling-training { left: 41.266733% !important; top: 33.271529% !important; width: 4.626805% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-crafting-focus { left: 46.680122% !important; top: 35.338922% !important; width: 4.587269% !important; height: 1.281753% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-crafting-training { left: 41.266733% !important; top: 35.338922% !important; width: 4.626805% !important; height: 1.281753% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-determination-focus { left: 46.680122% !important; top: 37.406188% !important; width: 4.587269% !important; height: 1.281881% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-determination-training { left: 41.266733% !important; top: 37.406188% !important; width: 4.626805% !important; height: 1.281881% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-devotion-focus { left: 68.206204% !important; top: 22.934692% !important; width: 4.599740% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-devotion-training { left: 62.812502% !important; top: 22.934692% !important; width: 4.626803% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-dexterity-focus { left: 68.206204% !important; top: 25.002085% !important; width: 4.599740% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-dexterity-training { left: 62.812502% !important; top: 25.002085% !important; width: 4.626803% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-entertain-focus { left: 68.206204% !important; top: 27.069478% !important; width: 4.599740% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-entertain-training { left: 62.812502% !important; top: 27.069478% !important; width: 4.626803% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-fortitude-focus { left: 68.206204% !important; top: 29.136744% !important; width: 4.599740% !important; height: 1.281885% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-fortitude-training { left: 62.812502% !important; top: 29.136744% !important; width: 4.626803% !important; height: 1.281885% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-guile-focus { left: 68.206204% !important; top: 31.204137% !important; width: 4.599740% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-guile-training { left: 62.812502% !important; top: 31.204137% !important; width: 4.626803% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intimidation-focus { left: 68.206204% !important; top: 33.271529% !important; width: 4.599740% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intimidation-training { left: 62.812502% !important; top: 33.271529% !important; width: 4.626803% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intuition-focus { left: 68.206204% !important; top: 35.338922% !important; width: 4.599740% !important; height: 1.281753% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-intuition-training { left: 62.812502% !important; top: 35.338922% !important; width: 4.626803% !important; height: 1.281753% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-lore-focus { left: 68.206204% !important; top: 37.406188% !important; width: 4.599740% !important; height: 1.281881% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-lore-training { left: 62.812502% !important; top: 37.406188% !important; width: 4.626803% !important; height: 1.281881% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-medicine-focus { left: 89.669459% !important; top: 22.934692% !important; width: 4.586288% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-medicine-training { left: 84.257715% !important; top: 22.934692% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-might-focus { left: 89.669459% !important; top: 25.002085% !important; width: 4.586288% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-might-training { left: 84.257715% !important; top: 25.001304% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-nature-focus { left: 89.669459% !important; top: 27.069478% !important; width: 4.586288% !important; height: 1.281757% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-nature-training { left: 84.257715% !important; top: 27.067788% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-reflexes-focus { left: 89.669459% !important; top: 29.136744% !important; width: 4.586288% !important; height: 1.281885% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-reflexes-training { left: 84.257715% !important; top: 29.134391% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-stealth-focus { left: 89.669459% !important; top: 31.204137% !important; width: 4.586288% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-stealth-training { left: 84.257715% !important; top: 31.200875% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-survival-focus { left: 89.669459% !important; top: 33.271529% !important; width: 4.586288% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-survival-training { left: 84.257715% !important; top: 33.267482% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-theology-focus { left: 89.669459% !important; top: 35.338922% !important; width: 4.586288% !important; height: 1.281753% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-theology-training { left: 84.257715% !important; top: 35.333958% !important; width: 4.626808% !important; height: 1.281749% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-weapon-skill-focus { left: 89.669459% !important; top: 37.406188% !important; width: 4.586288% !important; height: 1.281881% !important; }
+.callout[data-callout="soulbound-page-1"] .sb-skill-weapon-skill-training { left: 84.257715% !important; top: 37.400569% !important; width: 4.626808% !important; height: 1.281749% !important; }
+
+/* -------------------------------------------------------------------------
+   Direct Edit v12 — larger page, larger text/markers, skill alignment
+   ------------------------------------------------------------------------- */
+
+/* Make both character-sheet pages about 35% larger than the original
+   960px layout, while still fitting inside the Obsidian window. */
+.callout[data-callout="soulbound-page-1"],
+.callout[data-callout="soulbound-page-2"] {
+  width: min(98vw, 1300px) !important;
+}
+
+.soulbound-character-sheet-note .markdown-preview-sizer {
+  max-width: none !important;
+}
+
+/* Increase ordinary editable text throughout both pages. */
+.callout[data-callout="soulbound-page-1"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] :is(
+  .mb-input-type-text,
+  .mb-input-type-number,
+  .mb-input-type-textArea,
+  .mb-input-type-textarea
+) :is(input, textarea) {
+  font-size: clamp(9px, 1.52cqw, 19px) !important;
+}
+
+/* Small table entries such as attacks, equipment, and spells. */
+.callout[data-callout="soulbound-page-1"] .sb-sheet-small :is(input, textarea),
+.callout[data-callout="soulbound-page-2"] .sb-sheet-small :is(input, textarea) {
+  font-size: clamp(7px, 1.16cqw, 14px) !important;
+}
+
+/* Body, Mind, Soul, current/total values, and other large numbers. */
+.callout[data-callout="soulbound-page-1"] .sb-sheet-large input,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-large input {
+  font-size: clamp(13px, 2.65cqw, 31px) !important;
+}
+
+/* Goals, Connections, Talents, Background, Notes, and Other Gear. */
+.callout[data-callout="soulbound-page-1"] .sb-sheet-multiline textarea,
+.callout[data-callout="soulbound-page-2"] .sb-sheet-multiline textarea {
+  font-size: clamp(8px, 1.28cqw, 15px) !important;
+}
+
+/* Increase read-only calculated values. */
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-sheet-text,
+.callout[data-callout="soulbound-page-2"] .mb-view-wrapper.sb-sheet-text {
+  font-size: clamp(9px, 1.48cqw, 18px) !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-sheet-large,
+.callout[data-callout="soulbound-page-2"] .mb-view-wrapper.sb-sheet-large {
+  font-size: clamp(13px, 2.65cqw, 31px) !important;
+}
+
+/* Make selected Training and Focus markers more readable. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"] {
+  font-size: clamp(8px, 1.26cqw, 15px) !important;
+  font-weight: 800 !important;
+
+  /* The rendered glyphs sit slightly left of the printed boxes.
+     Shift both the visible markers and their click targets together. */
+  transform: translateX(0.30cqw) !important;
+}
+
+/* Keep the invisible skill selectors aligned with their visible markers. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] {
+  transform: translateX(0.30cqw) !important;
+}
+
+/* Increase combat-rating and wound markers. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper.sb-sheet-combat-marker {
+  font-size: clamp(11px, 1.65cqw, 21px) !important;
+  font-weight: 800 !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper.sb-sheet-wound-marker {
+  font-size: clamp(12px, 1.82cqw, 23px) !important;
+  font-weight: 800 !important;
+}
+
+/* Keep Natural Awareness large enough for the enlarged sheet. */
+.callout[data-callout="soulbound-page-1"] .sb-v-1-157,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-157,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-157 {
+  font-size: clamp(9px, 1.34cqw, 17px) !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v13 — final marker and resource-number adjustments
+   ------------------------------------------------------------------------- */
+
+/* Fine-tune Training and Focus markers.
+   Slightly smaller glyphs, tighter spacing, and a small right/down correction
+   keep all three symbols centred over the printed squares and diamonds. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"] {
+  font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif !important;
+  font-size: clamp(7px, 1.14cqw, 14px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.055cqw !important;
+  word-spacing: -0.055cqw !important;
+  transform: translateX(0.22cqw) translateY(0.035cqw) !important;
+}
+
+/* Keep the invisible Training/Focus selectors on the same corrected area. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] {
+  transform: translateX(0.22cqw) translateY(0.035cqw) !important;
+}
+
+/* Make Mettle Total and Toughness Total exactly match their Current values. */
+.callout[data-callout="soulbound-page-1"] .sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-190,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-190,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-190 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(13px, 2.65cqw, 31px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-190 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-190 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-190 * {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v14 — marker rollback and smaller calculated numbers
+   ------------------------------------------------------------------------- */
+
+/* Revert the v13 symbol-font change. The system UI symbol font distorted the
+   square and diamond markers. Use the sheet's original serif stack again,
+   reduce the size slightly, and keep only a small horizontal correction. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"] {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(6px, 0.98cqw, 12px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0.06cqw !important;
+  transform: translateX(0.16cqw) !important;
+}
+
+/* Keep the invisible selectors aligned with the visible markers. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"] {
+  transform: translateX(0.16cqw) !important;
+}
+
+/* Initiative, Mettle Total, and Toughness Total were oversized.
+   Give all three the same smaller calculated-number size. */
+.callout[data-callout="soulbound-page-1"] .sb-v-1-168,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-190,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-168,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-190,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-168,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-167,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-190 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(9px, 1.55cqw, 18px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.callout[data-callout="soulbound-page-1"] .sb-v-1-168 *,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .sb-v-1-190 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-168 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .mb-view.sb-v-1-190 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-168 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-167 *,
+.callout[data-callout="soulbound-page-1"] .mb-view-wrapper.sb-v-1-190 * {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v15 — separate Training and Focus alignment
+   ------------------------------------------------------------------------- */
+
+/* Training uses a small square glyph that fits inside the printed square.
+   Keep it close to the original horizontal position. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"][class*="-training"] {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: clamp(7px, 1.02cqw, 13px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0.10cqw !important;
+  transform: translateX(0.10cqw) !important;
+}
+
+/* Focus diamonds were still slightly left of their printed diamonds.
+   Move only Focus a few pixels to the right. */
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"][class*="-focus"] {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(6px, 0.98cqw, 12px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0.06cqw !important;
+  transform: translateX(0.30cqw) !important;
+}
+
+/* Match the invisible click areas to the corrected visible positions. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"][class*="-training"] {
+  transform: translateX(0.10cqw) !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"][class*="-focus"] {
+  transform: translateX(0.30cqw) !important;
+}
+
+/* -------------------------------------------------------------------------
+   Direct Edit v16 — Training-square refinement
+   ------------------------------------------------------------------------- */
+
+/* Make the Training squares larger and move them slightly farther right.
+   Focus markers are intentionally left unchanged. */
+
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"][class*="-training"] {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+  word-spacing: -8px !important;
+  transform: translate(2px, -6px) !important;
+}
+
+.callout[data-callout="soulbound-page-1"]
+.mb-view-wrapper[class*="sb-skill-display-"][class*="-focus"] {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  word-spacing: -2px !important;
+  transform: translate(4px, -1px) !important;
+}
+
+
+/* Keep the invisible Training selectors aligned with the larger markers. */
+.callout[data-callout="soulbound-page-1"]
+.mb-input-type-inlineSelect[class*="sb-skill-"][class*="-training"] {
+  transform: translateX(0.22cqw) !important;
+}
