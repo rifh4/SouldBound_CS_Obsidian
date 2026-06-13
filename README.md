@@ -15,6 +15,48 @@ The editor fields save their values directly inside the Markdown note, while the
 - Attacks, equipment, currency, spells, miracles, background, and notes
 - Character portrait support
 
+## Automatic Calculations
+
+The character sheet automatically calculates the following derived statistics from the character's Attributes and Skill Training:
+
+* **Melee** = Body + Weapon Skill Training
+* **Accuracy** = Mind + Ballistic Skill Training
+* **Defence** = Body + Reflexes Training
+* **Initiative** = Mind + Awareness Training + Reflexes Training
+* **Natural Awareness** = (Mind + Awareness Training) ÷ 2, rounded up
+* **Toughness** = Body + Mind + Soul
+* **Maximum Wounds** = (Body + Mind + Soul) ÷ 2, rounded up
+* **Mettle** = Soul ÷ 2, rounded up
+
+Melee, Accuracy, and Defence are automatically converted into the appropriate Ladder rating:
+
+|        Total | Rating        |
+| -----------: | ------------- |
+|          1–2 | Poor          |
+|          3–4 | Average       |
+|          5–6 | Good          |
+|          7–8 | Great         |
+|         9–10 | Superb        |
+| 11 or higher | Extraordinary |
+
+### Modifiers and Manual Overrides
+
+Temporary effects, equipment, Talents, spells, and Species abilities may change a derived statistic.
+
+Each calculated statistic therefore includes:
+
+* an automatic base calculation;
+* an editable modifier;
+* a final calculated value;
+* an optional manual override.
+
+When the manual override is disabled, the sheet uses the automatic calculation and modifier. When it is enabled, the sheet uses the value selected or entered by the user.
+
+For Ladder statistics, modifiers adjust the result by rating steps. For example, increasing Defence by one step changes `Average` to `Good`.
+
+Current Toughness and Current Mettle remain independently editable because they may decrease during play without changing their calculated maximum values. Armour and individual Wounds are also entered manually.
+
+
 ## Requirements
 
 - Obsidian desktop
