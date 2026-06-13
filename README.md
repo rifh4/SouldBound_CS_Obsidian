@@ -14,9 +14,6 @@ The editor fields save their values directly inside the Markdown note, while the
 - Combat abilities, Initiative, Mettle, Armour, Toughness, and Wounds
 - Attacks, equipment, currency, spells, miracles, background, and notes
 - Character portrait support
-- Hidden raw Properties panel for a cleaner interface
-- No separate custom JavaScript file required
-- Background artwork embedded in the CSS snippet
 
 ## Requirements
 
@@ -27,8 +24,8 @@ The editor fields save their values directly inside the Markdown note, while the
 ## Files
 
 ```text
-Soulbound Character Sheet - Fully Wired Meta Bind - Fixed v3.md
-soulbound-character-sheet-fixed-v3.css
+Soulbound Character Sheet.md
+soulbound-character-sheet.css
 README.md
 ```
 
@@ -45,34 +42,21 @@ README.md
 
 ### 2. Install the CSS snippet
 
-Copy:
-
-```text
-soulbound-character-sheet-fixed-v3.css
-```
-
-into:
-
-```text
-Your Vault/.obsidian/snippets/
-```
-
-Then:
-
 1. Open **Settings → Appearance**.
 2. Scroll to **CSS snippets**.
-3. Select **Reload snippets**.
-4. Enable `soulbound-character-sheet-fixed-v3`.
-5. Disable any older Soulbound CSS snippets.
+3. click the **folder icon** next to the CSS snippets section to open the snippets folder.
+4. Copy `soulbound-character-sheet`.
+5. Return to Obsidian
+6. Select **Reload snippets**.
+7. Enable `soulbound-character-sheet`.
 
-Only the newest Soulbound snippet should be enabled.
 
 ### 3. Add the character-sheet note
 
 Copy:
 
 ```text
-Soulbound Character Sheet - Fully Wired Meta Bind - Fixed v3.md
+Soulbound Character Sheet.md
 ```
 
 into any folder inside your Obsidian vault.
@@ -90,7 +74,7 @@ Ctrl + E
 Keep the original note as a reusable template.
 
 1. Right-click the template note in Obsidian.
-2. Select **Duplicate**.
+2. Select **Make a copy**.
 3. Rename the copy to your character's name.
 4. Open the copy in Reading view.
 5. Fill in the editor fields near the top of the note.
@@ -104,13 +88,13 @@ Each duplicated note is therefore a separate character.
 Place the portrait image somewhere inside your vault, for example:
 
 ```text
-Attachments/Characters/astrid.png
+Attachments/Characters/Sigmar.png
 ```
 
 Enter that vault-relative path into the portrait field:
 
 ```text
-Attachments/Characters/astrid.png
+Attachments/Characters/Sigmar.png
 ```
 
 Use forward slashes `/` in the path.
@@ -119,18 +103,20 @@ A simple folder structure could look like:
 
 ```text
 Characters/
-├── Astrid.md
-├── Brokk.md
+├── Sigmar.md
+├── Gorkamorka.md
 └── Portraits/
-    ├── astrid.png
-    └── brokk.webp
+    ├── Sigmar.png
+    └── Gorkamorka.webp
 ```
 
 In that case, a portrait path could be:
 
 ```text
-Characters/Portraits/astrid.png
+Characters/Portraits/Sigmar.png
 ```
+
+You can also use a web link instead of a local path
 
 ## How the Data Is Stored
 
@@ -139,7 +125,7 @@ The visible Meta Bind controls are connected to properties stored at the beginni
 For example:
 
 ```yaml
-character_name: Astrid Stormborn
+character_name: Sigmar Heldenhammer
 body: 3
 mind: 2
 soul: 4
@@ -151,21 +137,14 @@ You normally do not need to edit these properties manually.
 
 ## Printing or Exporting
 
-Use Obsidian's print or PDF export option while viewing the completed sheet.
-
-Before exporting, confirm that:
-
-- The CSS snippet is enabled.
-- The note is in Reading view.
-- Both character-sheet pages are visible.
-- The portrait and all entered values appear correctly.
+You cannot export the files unfortunately 
 
 ## Customizing the Layout
 
 Most graphical positioning is controlled by:
 
 ```text
-soulbound-character-sheet-fixed-v3.css
+soulbound-character-sheet.css
 ```
 
 The values use percentage-based positioning so they remain aligned when the sheet is resized.
@@ -196,16 +175,6 @@ Settings → Appearance → CSS snippets
 
 Reload the snippets and enable only the newest Soulbound CSS file.
 
-### Values appear on the left side instead of on the sheet
-
-An older CSS version may still be enabled.
-
-Disable all previous Soulbound snippets and enable only:
-
-```text
-soulbound-character-sheet-fixed-v3
-```
-
 ### Meta Bind expressions or error messages appear
 
 Confirm that the Meta Bind community plugin is installed and enabled.
@@ -231,11 +200,11 @@ All character information is stored locally in the Markdown note inside your Obs
 
 ## Usage and Rights
 
-This is an unofficial, fan-made personal-use project. No affiliation with or endorsement by the Cubicle 7 Entertainment Ltd is claimed.
+This is an unofficial, fan-made personal-use project. No affiliation with or endorsement by the Cubicle 7 Entertainment Ltd. is claimed.
 
 
 ## Credits
 
 - Obsidian
 - Meta Bind by Moritz Jung
-- Cubicle 7 Entertainment Ltd
+- Cubicle 7 Entertainment Ltd.
