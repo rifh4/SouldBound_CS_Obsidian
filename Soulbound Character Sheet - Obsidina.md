@@ -11,20 +11,40 @@ height: ""
 weight: ""
 distinguishing_features: ""
 xp: ""
-body: ""
-mind: ""
-soul: ""
-natural_awareness: ""
+body: 0
+mind: 0
+soul: 0
+melee_step_modifier: 0
+melee_override_enabled: false
+melee_override_rating: 0
+accuracy_step_modifier: 0
+accuracy_override_enabled: false
+accuracy_override_rating: 0
+defence_step_modifier: 0
+defence_override_enabled: false
+defence_override_rating: 0
+initiative_modifier: 0
+initiative_override_enabled: false
+initiative_override: 0
+natural_awareness_modifier: 0
+natural_awareness_override_enabled: false
+natural_awareness_override: 0
+toughness_modifier: 0
+toughness_override_enabled: false
+toughness_override: 0
+maximum_wounds_modifier: 0
+maximum_wounds_override_enabled: false
+maximum_wounds_override: 0
+mettle_modifier: 0
+mettle_override_enabled: false
+mettle_override: 0
 goals: ""
 connections: ""
 talents_1: ""
 talents_2: ""
-initiative: ""
-mettle_current: ""
-mettle_total: ""
-armour: ""
-toughness_current: ""
-toughness_total: ""
+mettle_current: 0
+armour: 0
+toughness_current: 0
 background: ""
 notes: ""
 other_gear_1: ""
@@ -81,9 +101,6 @@ theology_training: 0
 theology_focus: 0
 weapon_skill_training: 0
 weapon_skill_focus: 0
-combat_melee: ""
-combat_accuracy: ""
-combat_defence: ""
 wound_1: false
 wound_note_1: ""
 wound_2: false
@@ -231,8 +248,8 @@ Edit the character through the collapsible sections below. The two graphical pag
 > **Distinguishing features:**  
 > `INPUT[textArea:distinguishing_features]`  
 >
-> **Body:** `INPUT[text:body]` · **Mind:** `INPUT[text:mind]` · **Soul:** `INPUT[text:soul]`  
-> **Natural awareness:** `INPUT[text:natural_awareness]`  
+> **Body:** `INPUT[number:body]` · **Mind:** `INPUT[number:mind]` · **Soul:** `INPUT[number:soul]`  
+> Natural Awareness is calculated automatically in **Combat and wounds**.
 
 > [!list-checks]- Skills
 > Choose a value from **0–3** for training and focus.  
@@ -271,15 +288,46 @@ Edit the character through the collapsible sections below. The two graphical pag
 > **Talents — right column:**  
 > `INPUT[textArea:talents_2]`  
 
-> [!swords]- Combat and wounds
-> **Melee:** `INPUT[inlineSelect(option(Poor), option(Average), option(Good), option(Great), option(Superb), option(Extraordinary)):combat_melee]`  
-> **Accuracy:** `INPUT[inlineSelect(option(Poor), option(Average), option(Good), option(Great), option(Superb), option(Extraordinary)):combat_accuracy]`  
-> **Defence:** `INPUT[inlineSelect(option(Poor), option(Average), option(Good), option(Great), option(Superb), option(Extraordinary)):combat_defence]`  
+> [!swords]- Combat, derived values, and wounds
+> **Melee** — Body + Weapon Skill Training  
+> Base total: `VIEW[{body} + {weapon_skill_training}]` · Final rating: `VIEW[(({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 0 ? "Poor" : ({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 1 ? "Average" : ({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 2 ? "Good" : ({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 3 ? "Great" : ({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 4 ? "Superb" : "Extraordinary")]`  
+> Step modifier: `INPUT[inlineSelect(option(-5, -5 steps), option(-4, -4 steps), option(-3, -3 steps), option(-2, -2 steps), option(-1, -1 steps), option(0, +0 steps), option(1, +1 steps), option(2, +2 steps), option(3, +3 steps), option(4, +4 steps), option(5, +5 steps)):melee_step_modifier]`  
+> Manual override: `INPUT[toggle:melee_override_enabled]` · Rating: `INPUT[inlineSelect(option(0, Poor), option(1, Average), option(2, Good), option(3, Great), option(4, Superb), option(5, Extraordinary)):melee_override_rating]`  
 >
-> **Initiative:** `INPUT[text:initiative]`  
-> **Mettle:** Current `INPUT[text:mettle_current]` · Total `INPUT[text:mettle_total]`  
-> **Armour:** `INPUT[text:armour]`  
-> **Toughness:** Current `INPUT[text:toughness_current]` · Total `INPUT[text:toughness_total]`  
+> **Accuracy** — Mind + Ballistic Skill Training  
+> Base total: `VIEW[{mind} + {ballistic_skill_training}]` · Final rating: `VIEW[(({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 0 ? "Poor" : ({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 1 ? "Average" : ({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 2 ? "Good" : ({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 3 ? "Great" : ({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 4 ? "Superb" : "Extraordinary")]`  
+> Step modifier: `INPUT[inlineSelect(option(-5, -5 steps), option(-4, -4 steps), option(-3, -3 steps), option(-2, -2 steps), option(-1, -1 steps), option(0, +0 steps), option(1, +1 steps), option(2, +2 steps), option(3, +3 steps), option(4, +4 steps), option(5, +5 steps)):accuracy_step_modifier]`  
+> Manual override: `INPUT[toggle:accuracy_override_enabled]` · Rating: `INPUT[inlineSelect(option(0, Poor), option(1, Average), option(2, Good), option(3, Great), option(4, Superb), option(5, Extraordinary)):accuracy_override_rating]`  
+>
+> **Defence** — Body + Reflexes Training  
+> Base total: `VIEW[{body} + {reflexes_training}]` · Final rating: `VIEW[(({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 0 ? "Poor" : ({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 1 ? "Average" : ({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 2 ? "Good" : ({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 3 ? "Great" : ({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 4 ? "Superb" : "Extraordinary")]`  
+> Step modifier: `INPUT[inlineSelect(option(-5, -5 steps), option(-4, -4 steps), option(-3, -3 steps), option(-2, -2 steps), option(-1, -1 steps), option(0, +0 steps), option(1, +1 steps), option(2, +2 steps), option(3, +3 steps), option(4, +4 steps), option(5, +5 steps)):defence_step_modifier]`  
+> Manual override: `INPUT[toggle:defence_override_enabled]` · Rating: `INPUT[inlineSelect(option(0, Poor), option(1, Average), option(2, Good), option(3, Great), option(4, Superb), option(5, Extraordinary)):defence_override_rating]`  
+>
+> **Initiative** — Mind + Awareness Training + Reflexes Training  
+> Base: `VIEW[{mind} + {awareness_training} + {reflexes_training}]` · Modifier: `INPUT[number:initiative_modifier]` · Final: `VIEW[({initiative_override_enabled} ? {initiative_override} : max(0, {mind} + {awareness_training} + {reflexes_training} + {initiative_modifier}))]`  
+> Manual override: `INPUT[toggle:initiative_override_enabled]` · Override value: `INPUT[number:initiative_override]`  
+>
+> **Natural Awareness** — (Mind + Awareness Training) ÷ 2, rounded up  
+> Base: `VIEW[ceil(({mind} + {awareness_training}) / 2)]` · Modifier: `INPUT[number:natural_awareness_modifier]` · Final: `VIEW[({natural_awareness_override_enabled} ? {natural_awareness_override} : max(0, ceil(({mind} + {awareness_training}) / 2) + {natural_awareness_modifier}))]`  
+> Manual override: `INPUT[toggle:natural_awareness_override_enabled]` · Override value: `INPUT[number:natural_awareness_override]`  
+>
+> **Toughness** — Body + Mind + Soul  
+> Base: `VIEW[{body} + {mind} + {soul}]` · Modifier: `INPUT[number:toughness_modifier]` · Total: `VIEW[({toughness_override_enabled} ? {toughness_override} : max(0, {body} + {mind} + {soul} + {toughness_modifier}))]`  
+> Manual override: `INPUT[toggle:toughness_override_enabled]` · Override total: `INPUT[number:toughness_override]`  
+> Current Toughness: `INPUT[number:toughness_current]`  
+>
+> **Maximum Wounds** — (Body + Mind + Soul) ÷ 2, rounded up  
+> Base: `VIEW[ceil(({body} + {mind} + {soul}) / 2)]` · Modifier: `INPUT[number:maximum_wounds_modifier]` · Maximum: `VIEW[({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier}))]`  
+> Manual override: `INPUT[toggle:maximum_wounds_override_enabled]` · Override maximum: `INPUT[number:maximum_wounds_override]`  
+> Wound spaces above the final maximum are marked automatically on the graphical sheet.  
+>
+> **Mettle** — Soul ÷ 2, rounded up  
+> Base: `VIEW[ceil({soul} / 2)]` · Modifier: `INPUT[number:mettle_modifier]` · Total: `VIEW[({mettle_override_enabled} ? {mettle_override} : max(0, ceil({soul} / 2) + {mettle_modifier}))]`  
+> Manual override: `INPUT[toggle:mettle_override_enabled]` · Override total: `INPUT[number:mettle_override]`  
+> Current Mettle: `INPUT[number:mettle_current]`  
+>
+> **Armour:** `INPUT[number:armour]`  
 >
 > **Wounds:**  
 > 1. `INPUT[toggle:wound_1]` Note: `INPUT[text:wound_note_1]`  
@@ -565,57 +613,57 @@ Edit the character through the collapsible sections below. The two graphical pag
 > `VIEW[{weapon_skill_focus} >= 1 ? "◆" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-focus-marker), class(sb-v-1-154))]`
 > `VIEW[{weapon_skill_focus} >= 2 ? "◆" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-focus-marker), class(sb-v-1-155))]`
 > `VIEW[{weapon_skill_focus} >= 3 ? "◆" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-focus-marker), class(sb-v-1-156))]`
-> `VIEW[{natural_awareness}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-157))]`
+> `VIEW[({natural_awareness_override_enabled} ? {natural_awareness_override} : max(0, ceil(({mind} + {awareness_training}) / 2) + {natural_awareness_modifier}))][math(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-157))]`
 > `VIEW[{talents_1}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-158), class(sb-sheet-multiline))]`
 > `VIEW[{talents_2}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-159), class(sb-sheet-multiline))]`
 > `VIEW[{goals}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-160), class(sb-sheet-multiline))]`
 > `VIEW[{connections}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-161), class(sb-sheet-multiline))]`
 > `VIEW[{wound_note_1}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-162), class(sb-sheet-small))]`
-> `VIEW[{wound_1} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-163))]`
+> `VIEW[{wound_1} ? "●" : (1 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-163))]`
 > `VIEW[{wound_note_2}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-164), class(sb-sheet-small))]`
-> `VIEW[{wound_2} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-165))]`
+> `VIEW[{wound_2} ? "●" : (2 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-165))]`
 > `VIEW[{mettle_current}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-166), class(sb-sheet-large))]`
-> `VIEW[{mettle_total}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-167), class(sb-sheet-large))]`
-> `VIEW[{initiative}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-168), class(sb-sheet-large))]`
-> `VIEW[equalText({combat_melee}, "Extraordinary") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-169))]`
-> `VIEW[equalText({combat_accuracy}, "Extraordinary") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-170))]`
-> `VIEW[equalText({combat_defence}, "Extraordinary") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-171))]`
+> `VIEW[({mettle_override_enabled} ? {mettle_override} : max(0, ceil({soul} / 2) + {mettle_modifier}))][math(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-167), class(sb-sheet-large))]`
+> `VIEW[({initiative_override_enabled} ? {initiative_override} : max(0, {mind} + {awareness_training} + {reflexes_training} + {initiative_modifier}))][math(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-168), class(sb-sheet-large))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 5 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-169))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 5 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-170))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 5 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-171))]`
 > `VIEW[{wound_note_3}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-172), class(sb-sheet-small))]`
-> `VIEW[{wound_3} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-173))]`
-> `VIEW[equalText({combat_melee}, "Superb") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-174))]`
-> `VIEW[equalText({combat_accuracy}, "Superb") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-175))]`
-> `VIEW[equalText({combat_defence}, "Superb") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-176))]`
+> `VIEW[{wound_3} ? "●" : (3 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-173))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 4 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-174))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 4 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-175))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 4 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-176))]`
 > `VIEW[{wound_note_4}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-177), class(sb-sheet-small))]`
-> `VIEW[{wound_4} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-178))]`
-> `VIEW[equalText({combat_melee}, "Great") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-179))]`
-> `VIEW[equalText({combat_accuracy}, "Great") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-180))]`
-> `VIEW[equalText({combat_defence}, "Great") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-181))]`
+> `VIEW[{wound_4} ? "●" : (4 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-178))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 3 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-179))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 3 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-180))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 3 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-181))]`
 > `VIEW[{wound_note_5}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-182), class(sb-sheet-small))]`
-> `VIEW[{wound_5} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-183))]`
-> `VIEW[equalText({combat_melee}, "Good") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-184))]`
-> `VIEW[equalText({combat_accuracy}, "Good") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-185))]`
-> `VIEW[equalText({combat_defence}, "Good") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-186))]`
+> `VIEW[{wound_5} ? "●" : (5 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-183))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 2 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-184))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 2 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-185))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 2 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-186))]`
 > `VIEW[{wound_note_6}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-187), class(sb-sheet-small))]`
-> `VIEW[{wound_6} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-188))]`
+> `VIEW[{wound_6} ? "●" : (6 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-188))]`
 > `VIEW[{toughness_current}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-189), class(sb-sheet-large))]`
-> `VIEW[{toughness_total}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-190), class(sb-sheet-large))]`
+> `VIEW[({toughness_override_enabled} ? {toughness_override} : max(0, {body} + {mind} + {soul} + {toughness_modifier}))][math(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-190), class(sb-sheet-large))]`
 > `VIEW[{armour}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-191), class(sb-sheet-large))]`
-> `VIEW[equalText({combat_melee}, "Average") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-192))]`
-> `VIEW[equalText({combat_accuracy}, "Average") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-193))]`
-> `VIEW[equalText({combat_defence}, "Average") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-194))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 1 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-192))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 1 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-193))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 1 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-194))]`
 > `VIEW[{wound_note_7}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-195), class(sb-sheet-small))]`
-> `VIEW[{wound_7} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-196))]`
-> `VIEW[equalText({combat_melee}, "Poor") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-197))]`
-> `VIEW[equalText({combat_accuracy}, "Poor") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-198))]`
-> `VIEW[equalText({combat_defence}, "Poor") ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-199))]`
+> `VIEW[{wound_7} ? "●" : (7 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-196))]`
+> `VIEW[({melee_override_enabled} ? {melee_override_rating} : min(5, max(0, ceil(({body} + {weapon_skill_training}) / 2) - 1 + {melee_step_modifier}))) == 0 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-197))]`
+> `VIEW[({accuracy_override_enabled} ? {accuracy_override_rating} : min(5, max(0, ceil(({mind} + {ballistic_skill_training}) / 2) - 1 + {accuracy_step_modifier}))) == 0 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-198))]`
+> `VIEW[({defence_override_enabled} ? {defence_override_rating} : min(5, max(0, ceil(({body} + {reflexes_training}) / 2) - 1 + {defence_step_modifier}))) == 0 ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-combat-marker), class(sb-v-1-199))]`
 > `VIEW[{wound_note_8}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-200), class(sb-sheet-small))]`
-> `VIEW[{wound_8} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-201))]`
+> `VIEW[{wound_8} ? "●" : (8 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-201))]`
 > `VIEW[{wound_note_9}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-202), class(sb-sheet-small))]`
-> `VIEW[{wound_9} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-203))]`
+> `VIEW[{wound_9} ? "●" : (9 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-203))]`
 > `VIEW[{wound_note_10}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-204), class(sb-sheet-small))]`
-> `VIEW[{wound_10} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-205))]`
+> `VIEW[{wound_10} ? "●" : (10 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-205))]`
 > `VIEW[{wound_note_11}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-206), class(sb-sheet-small))]`
-> `VIEW[{wound_11} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-207))]`
+> `VIEW[{wound_11} ? "●" : (11 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-207))]`
 > `VIEW[{attack_1_weapon}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-208), class(sb-sheet-small))]`
 > `VIEW[{attack_1_pool}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-209), class(sb-sheet-small))]`
 > `VIEW[{attack_1_focus}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-210), class(sb-sheet-small))]`
@@ -627,7 +675,7 @@ Edit the character through the collapsible sections below. The two graphical pag
 > `VIEW[{attack_2_focus}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-216), class(sb-sheet-small))]`
 > `VIEW[{attack_2_damage}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-217), class(sb-sheet-small))]`
 > `VIEW[{attack_2_traits}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-218), class(sb-sheet-small))]`
-> `VIEW[{wound_12} ? "●" : ""][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-219))]`
+> `VIEW[{wound_12} ? "●" : (12 > ({maximum_wounds_override_enabled} ? {maximum_wounds_override} : max(0, ceil(({body} + {mind} + {soul}) / 2) + {maximum_wounds_modifier})) ? "×" : "")][math(class(sb-sheet-field), class(sb-sheet-marker), class(sb-sheet-wound-marker), class(sb-v-1-219))]`
 > `VIEW[{attack_3_weapon}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-220), class(sb-sheet-small))]`
 > `VIEW[{attack_3_pool}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-221), class(sb-sheet-small))]`
 > `VIEW[{attack_3_focus}][text(class(sb-sheet-field), class(sb-sheet-text), class(sb-v-1-222), class(sb-sheet-small))]`
