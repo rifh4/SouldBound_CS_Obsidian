@@ -231,12 +231,11 @@ All character information is stored locally in the Markdown note inside your Obs
 
 ## Usage and Rights
 
-This is an unofficial, fan-made personal-use project. No affiliation with or endorsement by the original publishers is claimed.
+This is an unofficial, fan-made personal-use project. No affiliation with or endorsement by the Cubicle 7 Entertainment Ltd is claimed.
 
-The graphical sheet contains artwork derived from the original character sheet. Keep the repository private unless you have permission to redistribute that material.
 
 ## Credits
 
 - Obsidian
 - Meta Bind by Moritz Jung
-- The creators and publishers of *Age of Sigmar: Soulbound*
+- Cubicle 7 Entertainment Ltd
